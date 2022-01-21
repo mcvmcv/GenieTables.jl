@@ -1,5 +1,6 @@
 module GenieTables
 
+using SearchLight
 
 export AbstractColumn, AbstractTable
 
