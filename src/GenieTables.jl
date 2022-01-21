@@ -8,27 +8,41 @@ export AbstractColumn, AbstractTable
 
 abstract type AbstractColumn end
 
-function render_header(column::AbstractColumn, object::AbstractModel) end
+function render(column::AbstractColumn, object::AbstractModel) end
 
-function render_row(column::AbstractColumn, object::AbstractModel) end
+function header(column::AbstractColumn) end
 
 
 
 
 struct DeleteColumn <: AbstractColumn
-    header_template = ""
-    row_template = ""
+    template = "<td>Delete button!</td>"
 end
 
 
+struct EditColumn <: AbstractColumn end
+
+struct FieldColumn <: AbstractColumn
+    field::Symbol
+end
+
+struct LinkColumn <: AbstractColumn end
+
+function render(col::DeleteColumn, object::T) where T <: AbstractModel
+    "<td>Delete button!</td>"
+end
+    
+function render(col::EditColumn, object::T) where T <: AbstractModel
+    "<td>Edit button!</td>"
+end
+
+function render(col::FieldColumn, object::T) where T <: AbstractModel)
 
 
 
 
 
 abstract type AbstractTable end
-
-
 
 
 
