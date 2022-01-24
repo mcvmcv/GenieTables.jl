@@ -1,5 +1,6 @@
 module GenieTables
 
+import Genie
 
 function install(dest::String; force = false) :: Nothing
     src = abspath(normpath(joinpath(@__DIR__, "..", Genie.Plugins.FILES_FOLDER)))
