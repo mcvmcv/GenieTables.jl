@@ -1,6 +1,6 @@
 module GenieTables
 
-using Genie, Searchlight
+using Genie, SearchLight
 
 export AbstractColumn, AbstractTable, render, header
 export Column, FieldColumn, LinkColumn
